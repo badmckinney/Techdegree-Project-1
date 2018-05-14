@@ -53,11 +53,11 @@ function getRandomQuote() {
 
 
 function printQuote() {
-  var chosenQuote = getRandomQuote()
+  var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
-  var message = <p class="quote">chosenQuote.quote</p>
-  <p class="source">chosenQuote.source</p>
-  <p class="profession">chosenQuote.profession</p>;
+  var message = "<p class="quote">chosenQuote.quote</p>"
+                    "<p class="source">chosenQuote.source</p>"
+                    "<p class="profession">chosenQuote.profession</p>";
 
   if (chosenQuote.citation === true) {
   message += <span class="citation">chosenQuote.citation</span>
