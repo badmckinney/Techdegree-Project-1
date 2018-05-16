@@ -55,16 +55,16 @@ function getRandomQuote() {
 function printQuote() {
   var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
-  var message = "<p class="quote">chosenQuote.quote</p>"
-                    "<p class="source">chosenQuote.source</p>"
-                    "<p class="profession">chosenQuote.profession</p>";
+  var message = '<p class="quote">chosenQuote.quote</p>';
+  message += '<p class="source">chosenQuote.source</p>';
+  message += '<p class="profession">chosenQuote.profession</p>';
 
   if (chosenQuote.citation === true) {
-  message += <span class="citation">chosenQuote.citation</span>
+    message += '<span class="citation">chosenQuote.citation</span>';
   };
 
   if (chosenQuote.year === true) {
-  message += <span class="year">chosenQuote.year</span>
+    message += '<span class="year">chosenQuote.year</span>';
   };
 
   quotebox.innerHTML = message;
