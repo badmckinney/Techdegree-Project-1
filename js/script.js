@@ -20,10 +20,9 @@ var quotes = [
   {
     quote: "I've always considered myself to be just average talent and what I have is a ridiculous, insane, obsessiveness for practicea and preparation.",
     source: "Will Smith",
-    citation: "Interview on '60 minutes'",
-    year: "2007",
-    profession: "Actor",
-    tag: "Motivational"
+    citation: "Interview on 60 minutes",
+    year: 2007,
+    profession: "Actor"
   },
   {
     quote: "Challenges are gifts that force us to search for a new center of gravity.",
@@ -35,14 +34,14 @@ var quotes = [
     quote: "I have a dream.",
     source: "Martin Luther King Jr.",
     citation: "I Have a Dream",
-    year: "1963",
+    year: 1963,
     profession: "Minister, Writer, Civil Rights Activist"
   },
   {
     quote: "A house divided against itself cannot stand.",
     source: "Abraham Lincoln",
     citation: "A House Divided Speech",
-    year: "1858",
+    year: 1858,
     profession: "P.O.T.U.S."
   }
 ];
@@ -65,16 +64,17 @@ function getRandomQuote() {
 function printQuote() {
   var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
-  var message = '<p class="quote">' + chosenQuote.quote + '</p>';
-  message += '<p class="source">' + chosenQuote.source + '</p>';
-  message += '<p class="profession">' + chosenQuote.profession + '</p>';
+  var message =
+    `<p class="quote">${chosenQuote.quote}</p>
+    <p class="source">${chosenQuote.source}
+    <span class="profession">${chosenQuote.profession}</span>`</p>;
 
   if (chosenQuote.citation === true) {
-    message += '<span class="citation">' + chosenQuote.citation + '</span>';
+    message += `<span class="citation">${chosenQuote.citation}</span>`;
   };
 
   if (chosenQuote.year === true) {
-    message += '<span class="year">' + chosenQuote.year + '</span>';
+    message += `<span class="year">${chosenQuote.year}</span>`;
   };
 
   quoteBox.innerHTML = message;
