@@ -2,6 +2,8 @@
 // when user clicks anywhere on the button, the "printQuote" function is called
 document.getElementById('loadQuote').addEventListener("click", printQuote, false);
 
+
+// An array containing objects with key/value pairs
 var quotes = [
   {
     quote: "Accept who you are. Unless you're a serial killer.",
@@ -19,7 +21,7 @@ var quotes = [
     quote: "I've always considered myself to be just average talent and what I have is a ridiculous, insane, obsessiveness for practicea and preparation.",
     source: "Will Smith",
     citation: "Interview on '60 minutes'",
-    year: 2007,
+    year: "2007",
     profession: "Actor",
     tag: "Motivational"
   },
@@ -33,40 +35,48 @@ var quotes = [
     quote: "I have a dream.",
     source: "Martin Luther King Jr.",
     citation: "I Have a Dream",
-    year: 1963,
+    year: "1963",
     profession: "Minister, Writer, Civil Rights Activist"
   },
   {
     quote: "A house divided against itself cannot stand.",
     source: "Abraham Lincoln",
     citation: "A House Divided Speech",
-    year: 1858,
+    year: "1858",
     profession: "P.O.T.U.S."
   }
 ];
 
 
+// selects a random quote by generating a random number and returning
+// the quote with the matching index value
 function getRandomQuote() {
   var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   return randomQuote;
 };
 
 
+// creates variable to hold the value of the getRandomQuote function.
+// creates a variable to hold the quote box element.
+// accesses the keys of the selected object to populate their values
+// and formulate the quote that will be displayed on the page.
+// adds to the quote based on the availability of optional information keys.
+// updates the inner html of quote box to change the quote displayed on page.
 function printQuote() {
   var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
-  var message = '<p class="quote">chosenQuote.quote</p>';
-  message += '<p class="source">chosenQuote.source</p>';
-  message += '<p class="profession">chosenQuote.profession</p>';
+  var message = '<p class="quote">' + chosenQuote.quote + '</p>';
+  message += '<p class="source">' + chosenQuote.source + '</p>';
+  message += '<p class="profession">' + chosenQuote.profession + '</p>';
 
   if (chosenQuote.citation === true) {
-    message += '<span class="citation">chosenQuote.citation</span>';
+    message += '<span class="citation">' + chosenQuote.citation + '</span>';
   };
 
   if (chosenQuote.year === true) {
-    message += '<span class="year">chosenQuote.year</span>';
+    message += '<span class="year">' + chosenQuote.year + '</span>';
   };
 
-  quotebox.innerHTML = message;
+  quoteBox.innerHTML = message;
 
 };
