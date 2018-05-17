@@ -66,8 +66,8 @@ function printQuote() {
   var quoteBox = document.getElementById('quote-box');
   var message =
     `<p class="quote">${chosenQuote.quote}</p>
-    <p class="source">${chosenQuote.source}
-    <span class="profession">${chosenQuote.profession}</span>`</p>;
+    <p class="source">${chosenQuote.source}</p>
+    <span class="profession">${chosenQuote.profession}</span>`;
 
   if (chosenQuote.citation === true) {
     message += `<span class="citation">${chosenQuote.citation}</span>`;
