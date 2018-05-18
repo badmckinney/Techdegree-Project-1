@@ -152,4 +152,7 @@ function printQuote() {
 
   changeColor();
 
+// - Sets a timer to change quotes if the button is not clicked within 15 seconds
+window.setInterval(printQuote, 15000);
+
 };
