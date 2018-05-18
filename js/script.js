@@ -127,6 +127,7 @@ function getRandomQuote() {
 // - Adds to the quote based on the availability of optional information keys.
 // - Updates the inner html of quote box and tag list to change the info displayed on page.
 // - Changes the pages background, button, and tag text color.
+// - Resets the interval timer
 function printQuote() {
   var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
@@ -152,7 +153,9 @@ function printQuote() {
 
   changeColor();
 
-// - Sets a timer to change quotes if the button is not clicked within 15 seconds
-window.setInterval(printQuote, 15000);
+  window.clearInterval()
 
 };
+
+// - Sets a timer to change quotes if the button is not clicked within 15 seconds
+window.setInterval(printQuote, 15000);
