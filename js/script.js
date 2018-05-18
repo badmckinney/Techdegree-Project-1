@@ -42,11 +42,51 @@ var quotes = [
     source: "Abraham Lincoln",
     citation: "A House Divided Speech",
     year: 1858,
-    profession: "P.O.T.U.S."
+    profession: "Former President"
+  },
+  {
+    quote: "Yo, Adrian.",
+    source: "Rocky Balboa",
+    citation: "Rocky II",
+    profession: "World Champion Boxer"
+  },
+  {
+    quote: "I did not have sexual relations with that woman",
+    source: "Bill Clinton",
+    citation: "C-SPAN Interview",
+    year: 1998,
+    profession: "Former President"
+  },
+  {
+    quote: "Let me take you to NeverNeverLand and be your Peter Pan.",
+    source: "Michael Jackson",
+    profession: "King of Pop"
+  },
+  {
+    quote: "Cut off your nose to spider face.",
+    source: "Michael G. Scott",
+    citation: "The Office",
+    profession: "Regional Manager of Dunder Mifflin"
+  },
+  {
+    quote: "Scooby Snack, jurassic plastic, gas booby trap.",
+    source: "Snoop Dogg",
+    citation: "Ghostface Killah, 'Nutmeg'",
+    year: 2010,
+    profession: "Rapper"
+  },
+  {
+    quote: "Burbank California, grocery store, Sunday afternoon. You: black girl, white shorts. Me: white guy, baby blue fubu suit",
+    source: "Nick Thune",
+    citation: "Craigslist – Missed Connections",
+    profession: "Comedian"
   }
 ];
 
-var colors = [ "#f4bcf4", "#ff7373", "#72c245", "#fdd32b", "#33eee0", "#ff9702", 	"#DC143C", 	"#87CEFA", 	"#C0C0C0"];
+// An array of colors to apply to background and button
+var colors = [ "#f4bcf4", "#ff7373", "#72c245", "#fdd32b", "#33eee0", "#ff9702",
+"#DC143C", 	"#87CEFA", 	"#C0C0C0", "#BA55D3", "#FFA07A", "#8B0000", "	#6B8E23",
+"#4682B4", "	#8B4513", "#424242", "#FF66CC"];
 
 // - Randomly selects a color from the colors array by generating a random
 //   number and returning the color with the matching index value.
@@ -81,11 +121,11 @@ function printQuote() {
     <p class="source">${chosenQuote.source}
     <span class="profession">${chosenQuote.profession}</span>`;
 
-  if (chosenQuote.citation === true) {
+  if (chosenQuote.citation) {
     message += `<span class="citation">${chosenQuote.citation}</span>`;
   }
 
-  if (chosenQuote.year === true) {
+  if (chosenQuote.year) {
     message += `<span class="year">${chosenQuote.year}</span>`;
   }
 
