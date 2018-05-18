@@ -46,9 +46,20 @@ var quotes = [
   }
 ];
 
+var colors = [ "#f4bcf4", "#ff7373", "#72c245", "#fdd32b", "#33eee0", "#ff9702", 	"#DC143C", 	"#87CEFA", 	"#C0C0C0"];
 
-// selects a random quote by generating a random number and returning
-// the quote with the matching index value
+// - Randomly selects a color from the colors array by generating a random
+//   number and returning the color with the matching index value.
+// - Changes the pages background and button color according to the returned color.
+function changeColor() {
+  var randomColor = colors[Math.floor(Math.random() * colors.length)];
+  document.getElementById('loadQuote').style.backgroundColor = randomColor;
+  document.body.style.backgroundColor = randomColor;
+}
+
+
+// - Randomly selects a quote by generating a random number and returning
+//   the quote with the matching index value.
 function getRandomQuote() {
   var randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
   return randomQuote;
@@ -61,6 +72,7 @@ function getRandomQuote() {
 //   and formulate the quote that will be displayed on the page.
 // - Adds to the quote based on the availability of optional information keys.
 // - Updates the inner html of quote box to change the quote displayed on page.
+// - Changes the pages background and button color.
 function printQuote() {
   var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
@@ -79,5 +91,5 @@ function printQuote() {
 
   message += "</p>";
   quoteBox.innerHTML = message;
-
+  changeColor();
 };
