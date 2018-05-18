@@ -18,7 +18,7 @@ var quotes = [
     profession: "Professional Stunt-man"
   },
   {
-    quote: "I've always considered myself to be just average talent and what I have is a ridiculous, insane, obsessiveness for practicea and preparation.",
+    quote: "I've always considered myself to be just average talent and what I have is a ridiculous, insane, obsessiveness for practice and preparation.",
     source: "Will Smith",
     citation: "Interview on 60 minutes",
     year: 2007,
@@ -55,28 +55,29 @@ function getRandomQuote() {
 };
 
 
-// creates variable to hold the value of the getRandomQuote function.
-// creates a variable to hold the quote box element.
-// accesses the keys of the selected object to populate their values
-// and formulate the quote that will be displayed on the page.
-// adds to the quote based on the availability of optional information keys.
-// updates the inner html of quote box to change the quote displayed on page.
+// - Creates variable to hold the value of the getRandomQuote function.
+// - Creates a variable to hold the quote box element.
+// - Accesses the keys of the selected object to populate their values
+//   and formulate the quote that will be displayed on the page.
+// - Adds to the quote based on the availability of optional information keys.
+// - Updates the inner html of quote box to change the quote displayed on page.
 function printQuote() {
   var chosenQuote = getRandomQuote();
   var quoteBox = document.getElementById('quote-box');
   var message =
     `<p class="quote">${chosenQuote.quote}</p>
-    <p class="source">${chosenQuote.source}</p>
+    <p class="source">${chosenQuote.source}
     <span class="profession">${chosenQuote.profession}</span>`;
 
   if (chosenQuote.citation === true) {
     message += `<span class="citation">${chosenQuote.citation}</span>`;
-  };
+  }
 
   if (chosenQuote.year === true) {
     message += `<span class="year">${chosenQuote.year}</span>`;
-  };
+  }
 
+  message += "</p>";
   quoteBox.innerHTML = message;
 
 };

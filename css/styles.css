@@ -47,7 +47,7 @@ body {
 }
 
 .profession {
-  font-style: italic;
+  font-style: normal;
 }
 
 .profession:before {
