@@ -157,5 +157,5 @@ function printQuote() {
 
 };
 
-// - Sets a timer to change quotes if the button is not clicked within 15 seconds
-window.setInterval(printQuote, 15000);
+// - Sets a timer to change quotes if the button is not clicked within 20 seconds
+window.setInterval(printQuote, 20000);
